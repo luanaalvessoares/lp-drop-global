@@ -26,8 +26,12 @@ import RiFileList3Fill from 'remixicon-react/FileList3FillIcon';
 import RiFileSettingsFill from 'remixicon-react/FileSettingsFillIcon';
 import RiCheckFill from 'remixicon-react/CheckFillIcon';
 import RiArrowRightSLine from 'remixicon-react/ArrowRightSLineIcon';
+import RiAddFill from 'remixicon-react/AddFillIcon';
 import Separator from '../../assets/images/separator-lp.svg';
 import SeparatorGreen from '../../assets/images/separator-green.svg';
+import RiFireFill from 'remixicon-react/FireFillIcon';
+import { Link } from 'react-router-dom';
+import SeparatorGradient from '../../assets/images/separator-gradient.svg';
 import Faq from 'react-faq-component';
 import Whatsapp from '../../components/whatsapp/Whatsapp';
 
@@ -35,10 +39,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
-import MainCta from '../../components/main-cta/MainCta';
 import ImageMainCta from '../../assets/images/imagenew.png';
+import ImageBandeiraBr from '../../assets/images/br-lp-global.svg';
+import ImageBandeiraUsa from '../../assets/images/usa-lp-global.svg';
+import ImageStar from '../../assets/images/star.svg';
 
-function LandingPage() {
+function VendaTodosOsDias() {
     const whatsapp = "https://api.whatsapp.com/send?phone=5511943600303&text=Ol%C3%A1,%20gostaria%20de%20falar%20com%20um%20especialista%20em%20E-commerce";
 
     const data = {
@@ -109,7 +115,99 @@ function LandingPage() {
     return (
         <div className={styles.container} id="lp-vendas">
 
-            <MainCta setTop={true} destaqueTitleText1="Uma no Brasil e Uma Global" destaqueTitleText2="de Dropshipping" titleText="Tenha 02 Lojas" description="Tenha acesso ao Curso mais completo para vender seu produto ou serviço na internet. Aprenda como atrair mais clientes para o seu negócio, investindo pouco e ganhando muito." iconInfo="Aplicado por +9.000 negócios em 23 países" btnText="por" btnTextDestaque1="12x de" btnTextDestaque2="R$497" btnDesc="ou à vista com desconto R$4.699" mainCtaImage={ImageMainCta} />
+            <section className={`${styles.containerChild} ${styles.containerMainCta}`}>
+                <div className={`${styles.child1} ${styles.child}`}>
+                    <div>
+                        <div className={styles.logo}>
+                            <Link to="/">
+                                <img src={logo} alt=""/>
+                            </Link>
+
+                            <div className={styles.especialistasBtn}>
+                                <a href="" rel="noreferrer">
+                                    Equipe de Vendas
+                                </a>
+                            </div>
+                        </div>
+                        <div className={styles.gridTwoColumns}>
+                            <div className={`${styles.gridTwoColumnInfo} ${styles.gridTwoColumnsChild}`}>
+                                <h1 className={styles.gridTwoColumnInfoTitle}>
+                                    <span>
+                                        Tenha
+                                        <span className={`${styles.destaqueText} ${styles.mainCtaDestaque} ${styles.mainCtaDestaque2}`}>2 lojas de Dropshipping</span>
+                                    </span>
+                                    <span className={`${styles.destaqueText} ${styles.mainCtaDestaque} ${styles.mainCtaDestaque3}`}>01 no Brasil e 01 Global</span>
+                                     
+                                </h1>
+                                <div className={styles.lojaUSAeBR}>
+                                    <h5>
+                                        <span><img src={ImageBandeiraBr} alt="" /> </span>
+                                        LOJA NACIONAL: Venda no Brasil em Real
+                                    </h5>
+                                    <h5>
+                                        <span><img src={ImageBandeiraUsa} alt="" /> </span>
+                                        LOJA GLOBAL: Venda no Exterior em Dólar
+                                    </h5>
+                                </div>
+                                <div className={styles.lojaUSAeBRBenefits}>
+                                    <p>
+                                        <span><RiAddFill /> </span>
+                                        60 Produtos nas duas Lojas (português e inglês)
+                                    </p>
+                                    <p>
+                                        <span><RiAddFill /> </span>
+                                        03 Anúncios + Assessor de Marketing
+                                    </p>
+                                    <p>
+                                        <span><RiAddFill /> </span>
+                                        Mentoria + Consultoria
+                                    </p>
+                                    <p>
+                                        <span><RiAddFill /> </span>
+                                        Curso com Mais de 300 Aulas
+                                    </p>
+                                    <p>
+                                        <span><RiAddFill /> </span>
+                                        Suporte Dedicado 24h
+                                    </p>
+                                    <p>
+                                        <span><RiAddFill /> </span>
+                                        Garantia Vitalícia
+                                    </p>
+                                </div>
+                                <h5 className={styles.gridTwoColumnInfoCta}>
+                                    <span><img src={ImageStar} alt="" /> </span>
+                                    Aplicado por +9.000 negócios em 23 países
+                                </h5>
+                                <div className={`${styles.gridTwoColumnInfoBtn} ${styles.ctaBtn}`}>
+                                    <a href="!#">
+                                        Por
+                                        <span>
+                                            <h3> 12x de </h3>
+                                        </span>
+                                        <span>
+                                            <h3>R$497</h3>
+                                        </span>
+                                    </a>
+                                    <p>
+                                        <span><RiArrowDropRightFill /> ou à vista com desconto R$4.699</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className={`${styles.gridTwoColumnImage} ${styles.gridTwoColumnsChild}`}>
+                                <img src={ImageMainCta} alt=""/>
+                            </div>
+                        </div>
+
+                        <span className={styles.sectionSeparatorGreen}>
+                            <img src={SeparatorGradient} alt=""/>
+                        </span>
+                    </div>
+
+                </div>
+            </section>
+
 
             <section className={styles.containerChild}>
                 <div className={`${styles.child2} ${styles.child}`}>
@@ -120,31 +218,43 @@ function LandingPage() {
                                     <p className={styles.destaqueText}>
                                         <span><RiRocket2Fill /></span>
                                     </p>
-                                    <p className={styles.destaqueText}>Módulos do máquina</p>
-                                    <h2>O que você vai receber ao se inscrever no treinamento</h2>
+                                    <p className={styles.destaqueText}>Drop Global</p>
+                                    <h2>Tudo incluso no pacote</h2>
                                 </div>
                             </div>
 
                             <div className={`${styles.gridTwoColumnInfoCards} ${styles.gridTwoColumnsChild}`}>
-                                <div className={styles.stickyInfoCard}>
+                                <div className={`${styles.stickyInfoCard} ${styles.stickyInfoChild1}`}>
                                     <span>01</span>
-                                    <h4>O mapa para atrair seu público comprador</h4>
-                                    <p>Você vai aprender  as minhas melhores técnicas e estratégias para encontrar as pessoas que vão comprar de você na internet. Só com esse módulo, você já conseguirá aumentar as suas vendas e reduzir os custos de investimento.</p>
+                                    <span className={styles.bandeiraGlobalSticky}><img src={ImageBandeiraBr} alt=""/></span>
+                                    <h4>01 Loja de Drop no Brasil</h4>
+                                    <p>Desenvolvemos a loja virtual completa para venda em Real no Brasil, com Logo, Banners e Integrações de fornecedores de produtos nacionais e internacionais.</p>
                                 </div>
-                                <div className={styles.stickyInfoCard}>
+                                <div className={`${styles.stickyInfoCard} ${styles.stickyInfoChild2}`}>
                                     <span>02</span>
-                                    <h4>Os Segredos de Persuasão que Fazem você Vender MUITO</h4>
-                                    <p>Aprenda como usar a persuasão para criar anúncios altamente poderosos que vão vender muito mais o seu produto ou serviço. Você deixará de criar anúncios sem graça e sem vendas e passará a criar anúncios campeões que vendem todos os dias.</p>
+                                    <span className={styles.bandeiraGlobalSticky}><img src={ImageBandeiraUsa} alt=""/></span>
+                                    <h4>01 Loja de Drop Global</h4>
+                                    <p>Desenvolvemos a loja virtual Multidioma completa para venda em Dólar fora do país, com Logo, Banners, checkout internacional e Integrações de fornecedores internacionais.</p>
                                 </div>
                                 <div className={styles.stickyInfoCard}>
                                     <span>03</span>
-                                    <h4>Como Vender no Google, na maior fonte de clientes do mundo</h4>
-                                    <p>Você vai aprender  absolutamente tudo que precisa para criar uma campanha profissional para vender no Google, passo a passo. Vou mostrar técnicas para descobrir palavras chave, para configurar sua campanha e para segmentá-la do jeito certo que fará você vender de verdade, para criar anúncios irresistíveis e muito mais.</p>
+                                    <h4>Mineração de 60 Produtos</h4>
+                                    <p>Nossos especialistas selecionam e cadastram os produtos nas 02 lojas, todos os produtos são testados e escolhidos para o seu nicho, só atuamos com fornecedores validados.</p>
                                 </div>
                                 <div className={styles.stickyInfoCard}>
                                     <span>04</span>
-                                    <h4>O mapa para atrair seu público comprador</h4>
-                                    <p>Você vai aprender  as minhas melhores técnicas e estratégias para encontrar as pessoas que vão comprar de você na internet. Só com esse módulo, você já conseguirá aumentar as suas vendas e reduzir os custos de investimento.</p>
+                                    <h4>03 Campanhas de Marketing</h4>
+                                    <p>Criamos os criativos e configuramos as campanhas com 3 produtos diferentes, você também tem uma assessoria dedicada com um especialista em marketing.</p>
+                                </div>
+                                <div className={styles.stickyInfoCard}>
+                                    <span>05</span>
+                                    <h4>Suporte 24hs com Especialistas</h4>
+                                    <p>Disponibilizamos suporte dedicado trilíngue e especialistas pelo WhatsApp e telefone, também possuímos centenas de vídeos tutoriais para auxiliar você no dia-a-dia</p>
+                                </div>
+                                <div className={styles.stickyInfoCard}>
+                                    <span>06</span>
+                                    <h4>Curso e Mentoria +300 Vídeos</h4>
+                                    <p>Aulas semanais, módulos recorrentes e uma comunidade com interação diária para que a sua jornada conosco seja junto a pessoas incríveis com conhecimentos reais.</p>
                                 </div>
                             </div>
                         </div>
@@ -924,4 +1034,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage;
+export default VendaTodosOsDias;
